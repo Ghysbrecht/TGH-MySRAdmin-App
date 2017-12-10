@@ -44,7 +44,6 @@ public class HighScoresFragment extends Fragment implements IScoreListener {
 
         SharedPreferences settings = this.getActivity().getSharedPreferences("MyPrefsFile", 0);
         String serverAddress  = settings.getString("serverAddress", "http://localhost:3000/");
-        //userId = settings.getInt("currentUserId", 0);
 
         database = new Database(serverAddress);
 

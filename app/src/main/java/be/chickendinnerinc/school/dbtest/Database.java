@@ -44,4 +44,23 @@ public class Database {
             }
         });
     }
+
+    public void createParticipant(Participant participant){
+        Call<String> response = databaseService.createJob(participant);
+        response.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, retrofit2.Response<String> response) {
+                if(response.body() != null){
+                    Log.e("SRADM","It did work, here is the info: " + response.body());
+
+                }
+                else Log.e("SRADM", "No body :(");
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                Log.e("SRADM", "Network error?");
+            }
+        });
+    }
 }

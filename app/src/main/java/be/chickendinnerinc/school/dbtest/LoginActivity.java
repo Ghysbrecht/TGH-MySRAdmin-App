@@ -325,7 +325,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         protected Boolean doInBackground(Void... params) {
             User user = AppDatabase.getInstance(getApplicationContext()).userDao().findByEmail(mEmail);
             if(user == null){
-                Log.e("TEST","No user found!");
+                Log.e("SRADM","No user found!");
                 Toast.makeText(getApplicationContext(), "No user found!", Toast.LENGTH_SHORT).show();
             }
 
@@ -333,9 +333,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 if(user != null && hashedPasswordsMatch(user.getHashedPassword())){
                     return true;
                 }
-                Log.e("TEST","Passwords do not match!");
+                Log.e("SRADM","Passwords do not match!");
             } catch (NoSuchAlgorithmException e) {
-                Log.e("TEST","Exception!");
+                Log.e("SRADM","Exception!");
                 return false;
             }
 

@@ -8,13 +8,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
-
-import java.util.List;
-import java.util.Set;
+import android.widget.Toast;
 
 
 public class SettingsFragment extends Fragment implements View.OnClickListener{
@@ -41,7 +37,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener{
                              Bundle savedInstanceState) {
         mView =  inflater.inflate(R.layout.fragment_settings, container, false);
 
-        ipText = (EditText)mView.findViewById(R.id.ipTextField);
+        ipText = (EditText)mView.findViewById(R.id.ipField);
         Button saveChangesButton = mView.findViewById(R.id.saveButton);
         saveChangesButton.setOnClickListener(this);
 
@@ -76,6 +72,8 @@ public class SettingsFragment extends Fragment implements View.OnClickListener{
         SharedPreferences.Editor editor = settings.edit();
         editor.putString("serverAddress", serverAddress);
         editor.commit();
+        Toast.makeText(getContext(), "Saved!", Toast.LENGTH_SHORT).show();
+
     }
 
     public interface OnFragmentInteractionListener {
