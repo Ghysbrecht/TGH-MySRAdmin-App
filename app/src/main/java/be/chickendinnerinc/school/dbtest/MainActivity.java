@@ -92,7 +92,9 @@ public class MainActivity extends AppCompatActivity {
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
         IntentFilter[] intentFilter = new IntentFilter[]{};
 
-        nfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFilter, null);
+        if(nfcAdapter != null) {
+            nfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFilter, null);
+        }
 
         super.onResume();
     }

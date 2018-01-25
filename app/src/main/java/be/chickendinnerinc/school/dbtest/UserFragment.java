@@ -52,8 +52,6 @@ public class UserFragment extends Fragment implements View.OnClickListener{
         Button createButton = mView.findViewById(R.id.createUserButton);
         createButton.setOnClickListener(this);
 
-        Button rfidButton = mView.findViewById(R.id.rfidButton);
-        rfidButton.setOnClickListener(this);
 
         SharedPreferences settings = this.getActivity().getSharedPreferences("MyPrefsFile", 0);
         serverAddress  = settings.getString("serverAddress", "http://localhost:3000/");
@@ -87,9 +85,6 @@ public class UserFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         switch(view.getId()){
-            case R.id.rfidButton:
-                //getUidViaRfid();
-                break;
             case R.id.createUserButton:
                 createUser();
                 break;

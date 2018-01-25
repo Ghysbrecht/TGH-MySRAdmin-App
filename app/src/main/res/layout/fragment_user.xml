@@ -88,19 +88,6 @@
             app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:id="@+id/rfidButton"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:background="@color/colorPrimary"
-            android:text="Load Via RFID"
-            android:textColor="@android:color/background_light"
-            app:layout_constraintBottom_toTopOf="@+id/createUserButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
 </FrameLayout>
